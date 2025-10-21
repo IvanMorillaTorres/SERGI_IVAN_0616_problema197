@@ -64,4 +64,3 @@ function ejecutar_descifrado_2() {
   const salida = descifrado_2_sergi(entrada);
   document.getElementById('resultado2').textContent = salida;
 }
-
