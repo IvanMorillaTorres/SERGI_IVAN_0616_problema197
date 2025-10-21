@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Descifrar mensaje secreto</title>
+  <meta charset="UTF-8">
+  <title>Descifrar mensaje secreto</title>
 </head>
 <body>
-    <h2>Descifrador del agente 0069</h2>
-    <form action="descifrar.php" method="post">
-        <label>Mensaje cifrado 1:</label><br>
-        <input type="text" name="mensaje1" size="50"><br><br>
-        <button on<button onclick="descifrado_1_ivan()">Descifrar</button>click="descifrarMensajes()">Descifrar</button>
-        <label>Mensaje cifrado 2:</label><br>
-        <input type="text" name="mensaje2" size="50"><br><br>
-                <button onclick="descifrado_2_sergi()">Descifrar</button>
-        <label>Mensaje cifrado 3:</label><br>
-        <button onclick="descifrado_ambos()">Descifrar</button>
+  <h2>Descifrador del agente 0069</h2>
 
-    <p><strong>Resultado 1:</strong> <span id="resultado1"></span></p>
-    <p><strong>Resultado 2:</strong> <span id="resultado2"></span></p>
-    <p><strong>Resultado 3:</strong> <span id="resultado3"></span></p>
-    </form>
+  <!-- Mensaje cifrado 1 -->
+  <label for="mensaje1">Mensaje cifrado 1:</label><br>
+  <input type="text" id="mensaje1" size="50"><br><br>
+  <button type="button" onclick="ejecutar_descifrado_1()">Descifrar</button>
+  <p><strong>Resultado 1:</strong> <span id="resultado1"></span></p>
 
+  <!-- Mensaje cifrado 2 -->
+  <label for="mensaje2">Mensaje cifrado 2:</label><br>
+  <input type="text" id="mensaje2" size="50"><br><br>
+  <button type="button" onclick="ejecutar_descifrado_2()">Descifrar</button>
+  <p><strong>Resultado 2:</strong> <span id="resultado2"></span></p>
+
+  <!-- Mensaje cifrado 3 -->
+  <label for="mensaje3">Mensaje cifrado 3:</label><br>
+  <input type="text" id="mensaje3" size="50"><br><br>
+  <button type="button" onclick="ejecutar_descifrado_ambos()">Descifrar</button>
+  <p><strong>Resultado 3:</strong> <span id="resultado3"></span></p>
 
   <script src="./JS/script.js"></script>
 </body>

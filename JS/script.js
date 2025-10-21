@@ -1,39 +1,41 @@
 function descifrado_1_ivan(cadena_encriptada) {
-  let resultado = '';
+  let resultado = [];
   let variable_secundaria = '';
 
   for (let i = 0; i < cadena_encriptada.length; i++) {
-    let letra = cadena_encriptada[i];
+    const letra = cadena_encriptada[i];
 
-    // Comprobamos si la letra es vocal usando comparación directa
-    if (
-      letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u' ||
-      letra === 'A' || letra === 'E' || letra === 'I' || letra === 'O' || letra === 'U'
-    ) {
-      // Si es vocal, añadimos lo acumulado (invertido) y luego la vocal
-      resultado += variable_secundaria.split('').reverse().join('');
-      resultado += letra;
-      variable_secundaria = '';
+    if ('aeiouAEIOU'.includes(letra)) {
+      // Si hay consonantes acumuladas, las invertimos y añadimos
+      if (variable_secundaria.length > 0) {
+        resultado.push(...variable_secundaria.split('').reverse());
+        variable_secundaria = '';
+      }
+      // Añadir la vocal directamente
+      resultado.push(letra);
     } else {
-        
-      // Si no es vocal, la guardamos en la variable secundaria
+      // Espacios cuentan como consonantes, se acumulan
       variable_secundaria += letra;
     }
   }
 
-  // Al final, si quedan consonantes, también las invertimos
-  resultado += variable_secundaria.split('').reverse().join('');
+  // Añadir últimas consonantes si quedan
+  if (variable_secundaria.length > 0) {
+    resultado.push(...variable_secundaria.split('').reverse());
+  }
 
-  return resultado;
+  return resultado.join('');
 }
 
-function cifrado_2_sergi(mensaje) {
+
+
+function descifrado_2_sergi(mensaje) {
   let frase = mensaje.length;
   let resultado = new Array(frase);
   let izq = 0;
   let der = frase - 1;
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < frase; i++) {
     if (i % 2 === 0) {
       resultado[izq++] = mensaje[i];
     } else {
@@ -42,4 +44,23 @@ function cifrado_2_sergi(mensaje) {
   }
 
   return resultado.join('');
+}
+
+function ejecutar_descifrado_1() {
+  const entrada = document.getElementById('mensaje1').value;
+  const salida = descifrado_1_ivan(entrada);
+  document.getElementById('resultado1').textContent = salida;
+}
+
+function ejecutar_descifrado_2() {
+  const entrada = document.getElementById('mensaje2').value;
+  const salida = descifrado_2_sergi(entrada);
+  document.getElementById('resultado2').textContent = salida;
+}
+
+function ejecutar_descifrado_ambos() {
+  const entrada = document.getElementById('mensaje3').value;
+  const intermedio = descifrado_1_ivan(entrada);
+  const salida = descifrado_2_sergi(intermedio);
+  document.getElementById('resultado3').textContent = salida;
 }
