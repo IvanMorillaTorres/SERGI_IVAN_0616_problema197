@@ -37,11 +37,12 @@ function descifrado_1_ivan(cadena_encriptada) {
 
 
 function descifrado_2_sergi(mensaje) {
+  // Inicializamos variables
   let frase = mensaje.length;
   let resultado = new Array(frase);
   let izq = 0;
   let der = frase - 1;
-
+  // Recorremos el mensaje
   for (let i = 0; i < frase; i++) {
     if (i % 2 === 0) {
       resultado[izq++] = mensaje[i];
@@ -49,7 +50,7 @@ function descifrado_2_sergi(mensaje) {
       resultado[der--] = mensaje[i];
     }
   }
-
+  // Unimos el resultado y lo devolvemos
   return resultado.join('');
 }
 
