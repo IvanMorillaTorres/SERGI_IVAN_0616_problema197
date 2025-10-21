@@ -64,3 +64,10 @@ function ejecutar_descifrado_2() {
   const salida = descifrado_2_sergi(entrada);
   document.getElementById('resultado2').textContent = salida;
 }
+
+function ejecutar_descifrado_ambos() {
+  const entrada = document.getElementById('mensaje3').value;
+  const paso1 = descifrado_2_sergi(entrada);
+  const salida = descifrado_1_ivan(paso1);
+  document.getElementById('resultado3').textContent = salida;
+}
