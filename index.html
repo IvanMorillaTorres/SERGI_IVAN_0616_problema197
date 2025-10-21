@@ -9,17 +9,19 @@
     <form action="descifrar.php" method="post">
         <label>Mensaje cifrado 1:</label><br>
         <input type="text" name="mensaje1" size="50"><br><br>
-
+        <button on<button onclick="descifrado_1_ivan()">Descifrar</button>click="descifrarMensajes()">Descifrar</button>
         <label>Mensaje cifrado 2:</label><br>
         <input type="text" name="mensaje2" size="50"><br><br>
-
+                <button onclick="descifrado_2_sergi()">Descifrar</button>
         <label>Mensaje cifrado 3:</label><br>
-        <input type="text" name="mensaje3" size="50"><br><br>
+        <button onclick="descifrado_ambos()">Descifrar</button>
 
-        <input type="submit" value="Descifrar">
+    <p><strong>Resultado 1:</strong> <span id="resultado1"></span></p>
+    <p><strong>Resultado 2:</strong> <span id="resultado2"></span></p>
+    <p><strong>Resultado 3:</strong> <span id="resultado3"></span></p>
     </form>
 
 
-  <script src="descifrar.js"> </script>
+  <script src="./JS/script.js"></script>
 </body>
 </html>
