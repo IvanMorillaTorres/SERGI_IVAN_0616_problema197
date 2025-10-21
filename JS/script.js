@@ -1,30 +1,37 @@
 function descifrado_1_ivan(cadena_encriptada) {
-  let resultado = [];
+  let resultado = '';
   let variable_secundaria = '';
 
   for (let i = 0; i < cadena_encriptada.length; i++) {
-    const letra = cadena_encriptada[i];
+    let letra = cadena_encriptada[i];
 
-    if ('aeiouAEIOU'.includes(letra)) {
-      // Si hay consonantes acumuladas, las invertimos y añadimos
-      if (variable_secundaria.length > 0) {
-        resultado.push(...variable_secundaria.split('').reverse());
+    // Si es vocal, cortamos el grupo
+    if (
+      letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u' ||
+      letra === 'A' || letra === 'E' || letra === 'I' || letra === 'O' || letra === 'U'
+    ) {
+      // Añadir grupo invertido si hay
+      if (variable_secundaria !== '') {
+        resultado += variable_secundaria.split('').reverse().join('');
         variable_secundaria = '';
       }
-      // Añadir la vocal directamente
-      resultado.push(letra);
+      // Añadir la vocal
+      resultado += letra;
+    } else if (letra === ' ') {
+      // Si es espacio, lo añadimos tal cual (no cortamos grupo)
+      resultado += letra;
     } else {
-      // Espacios cuentan como consonantes, se acumulan
+      // Acumulamos consonantes
       variable_secundaria += letra;
     }
   }
 
-  // Añadir últimas consonantes si quedan
-  if (variable_secundaria.length > 0) {
-    resultado.push(...variable_secundaria.split('').reverse());
+  // Añadir último grupo si queda
+  if (variable_secundaria !== '') {
+    resultado += variable_secundaria.split('').reverse().join('');
   }
 
-  return resultado.join('');
+  return resultado;
 }
 
 
