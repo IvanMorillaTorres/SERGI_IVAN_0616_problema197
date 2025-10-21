@@ -1,8 +1,4 @@
-function  ivan(a) {
-
-}
-    
-function cifrado_2_sergi(mensaje) {
+function descifrado_2_sergi(mensaje) {
   const frase = mensaje.length;
   const resultado = new Array(frase);
   let izq = 0;
