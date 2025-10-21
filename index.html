@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Este documento de prueba</title>
+    <title>Descifrar mensaje secreto</title>
 </head>
-<body style="background-color: rgb(255, 0, 0);">
-    <p> Hola, Feliz Jargulin grupo soy Vanesa</p>
 <body>
-    <p>Hola, soy sergi</p>
-    <p>Como estais?</p>
+    <h2>Descifrador del agente 0069 🕵️‍♂️</h2>
+    <form action="descifrar.php" method="post">
+        <label>Mensaje cifrado 1:</label><br>
+        <input type="text" name="mensaje1" size="50"><br><br>
+
+        <label>Mensaje cifrado 2:</label><br>
+        <input type="text" name="mensaje2" size="50"><br><br>
+
+        <label>Mensaje cifrado 3:</label><br>
+        <input type="text" name="mensaje3" size="50"><br><br>
+
+        <input type="submit" value="Descifrar">
+    </form>
+
+
+  <script src="descifrar.js"> </script>
 </body>
 </html>
